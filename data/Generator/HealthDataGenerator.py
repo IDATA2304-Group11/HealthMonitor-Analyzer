@@ -294,8 +294,7 @@ def generateRegisteredSensorData(seconds):
     
     return PatientData
         
-
-print(generateRegisteredSensorData(2))        
+      
         
 
 
