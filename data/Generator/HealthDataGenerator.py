@@ -211,7 +211,7 @@ def generateDiastolicData(seconds, patient):
 
 
 """ 
-The method returs an array of time values from the time of the method being called, till the desired duration
+The method returs an array of time values for a short duration.
 
 @version 22/11/22
 """
@@ -235,18 +235,38 @@ def generateTimeframeData(seconds):
         
         newTime = str(currentTime.replace(second= newSecond, minute= currentMinute))
         
-        Timedata.append(newTime[0:17])
+        Timedata.append(newTime[0:19])
        
         counter += 1
         
         if newSecond == (SECONDS_IN_A_MINUTE - 1):
             currentMinute += 1
         
-    return Timedata    
+    return Timedata
+
+"""
+Sorts a given array by an offset into another specified array.
+
+@version 03/12/22
+"""
+def sortArrayByOffset(toBeSortedArray, unsortedArray, offset, index):
+    lastIndex = len(unsortedArray) - 1
+    
+    if(index == lastIndex):
+        return toBeSortedArray.append(unsortedArray[index])
+    
+    if(index > len(unsortedArray) - 1):
+        return sortArrayByOffset(toBeSortedArray,unsortedArray, offset, index - lastIndex)
+    
+    toBeSortedArray.append(unsortedArray[index])
+    
+    sortArrayByOffset(toBeSortedArray,unsortedArray, offset, index + offset)    
+        
     
 """
-Generates sensor data for pre-defined registered sensor users in a given timeframe
+Generates registered patient data in a given timeframe.
 
+@verison 03/12/22
 """
 def generateRegisteredSensorData(seconds):
     
@@ -260,9 +280,9 @@ def generateRegisteredSensorData(seconds):
                             ,"ABCD-EFGH-AC81": Patient(0,88,6,2,7)
                             ,"ABCD-EFGH-AC82": Patient(0,71,4,6,5)}
     
-    PatientData = []
+    DATA_SEPERATOR = ";"
     
-    currentDataEntry = ""
+    PatientData = []
         
     for sensor in REGISTERED_SENSOR_SERIALNUMBERS:
         
@@ -276,12 +296,14 @@ def generateRegisteredSensorData(seconds):
         
         dataIndex = 0
         
+        currentDataEntry = ""
+        
         while dataIndex < seconds:
             
-            currentDataEntry += timeframe[dataIndex] + ";" 
-            currentDataEntry += str(systolicData[dataIndex]) + ";"
-            currentDataEntry += str(diastolicData[dataIndex]) + ";"
-            currentDataEntry += str(heartrateData[dataIndex]) + ";"
+            currentDataEntry += timeframe[dataIndex] + DATA_SEPERATOR 
+            currentDataEntry += str(systolicData[dataIndex]) + DATA_SEPERATOR
+            currentDataEntry += str(diastolicData[dataIndex]) + DATA_SEPERATOR
+            currentDataEntry += str(heartrateData[dataIndex]) + DATA_SEPERATOR
             currentDataEntry += sensor
             
             PatientData.append(currentDataEntry)
@@ -289,12 +311,14 @@ def generateRegisteredSensorData(seconds):
             currentDataEntry = ""
             
             dataIndex += 1
-        
-        
     
-    return PatientData
+    sortedTimeframePatientData = []
+    
+    # Sorts data by each second
+    sortArrayByOffset(sortedTimeframePatientData, PatientData, seconds, index = 0 )
         
-      
+    return sortedTimeframePatientData
+        
         
 
 
