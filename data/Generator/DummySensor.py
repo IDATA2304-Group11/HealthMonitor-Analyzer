@@ -14,11 +14,11 @@ def connect():
     return s
 
 """
-Sends medicaldata which are extracted from a data-generator
+Sends data which are extracted from a data-generator
 """
-def sendMedicalData(duration):
+def sendData(duration):
     
-    print("Trying to establish connection")
+    print("Trying to establish connection...")
     
     connection = connect()
     
@@ -28,17 +28,12 @@ def sendMedicalData(duration):
         
     for data in AllPatientData:
         
-        packet = data
+        connection.send(data.encode("utf-8"))
         
-        connection.send(packet.encode("utf-8"))
+        time.sleep(0.2) 
 
-        time.sleep(1)
-
-        print("Packet sent")
-
-    print("Data sent")
+    print("Data delivered!")
                
-sendMedicalData(5)        
         
       
 
