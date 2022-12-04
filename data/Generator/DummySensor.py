@@ -2,8 +2,8 @@ import HealthDataGenerator
 import socket
 import time
 
-port = 9852 
-address = ('10.24.90.91',port)
+port = 9852
+address = ('10.24.88.135',port)
 
 """ 
 Creates a socket and connects to specified adress 
@@ -27,14 +27,16 @@ def sendData(duration):
     AllPatientData = HealthDataGenerator.generateRegisteredSensorData(duration)
         
     for data in AllPatientData:
-        
+
+        print(data)
+
         connection.send(data.encode("utf-8"))
-        
-        time.sleep(0.2) 
+
+        time.sleep(0.2)
 
     print("Data delivered!")
-               
         
-      
+        
+sendData(5)
 
 
