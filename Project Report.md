@@ -30,24 +30,21 @@ For improvements the generation methods could be optimized and refactored to a s
 ### <b>Web development</b>
 ***
 #### <b>Theory</b>
-As of web development, we use HTML5 and CSS for webdesign and decoration. HTML is a hypertext markup language for the web that defines the structure of web pages by creating HTML elements. Web pages are mostly structured by divisions, also called divs. These are containers that contain other HTML elements such as paragraphs, tables, text and buttons. In our webdesign, we have actively been using divisons to distribute responsibility.
+As of web development, we use HTML5 and CSS for webdesign and decoration. HTML is a hypertext markup language for the web that defines the structure of web pages by creating html elements. Web pages are mostly structured by divisions, also called divs. These are containers that contain other html elements such as paragraphs, tables, text and buttons. In our webdesign, we have actively been using divisons to distribute responsibility of elements to make both html and css code more structured. 
 
-
-<br>
-<br>
-<br>
-
-
-and structuring by using HTML elements. HTML elements are the building blocks of a webpage, and are created by using tags and attributes.
-
-Some of our goals when designing the website are good interaction between user and machine, such 
+CSS, cascading style sheets, is a programming language used to describe html elements with properties such as coloring,
 #### <b>Results</b>
-kkkk
+At first we were unsure on whether to use text-based terminal gui, or create a webpage for visualization. However, we landed on creating a webpage due to its simplicity and ease of use. Some of the functionality we discussed before creating the website was:
+* Patients visualization through table
+* Patient search
+* Diagrams for bloodpressure
+* Choose patient and see data
 
+Currently we have limited the scope of the webpage to only show critial patients at the dashboard, as well as all patients under the patients tab in the sidebar. By using sidebars, we can easily expand the scope and implement new functionality by writing more HTML and CSS code.
 
 #### <b>Wireframes</b>
-
-![](/img/WIREFRAME1.png.png "Title")
+<!-- Extension -->
+![Dashboard_wireframe](/img/WIREFRAME1.png =400x400) ![Dashboard_wireframe](/img/WIREFRAME2.png =400x400)
 
 
 ## <b>References</b>
