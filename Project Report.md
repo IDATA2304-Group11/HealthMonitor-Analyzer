@@ -50,6 +50,53 @@ up.
 
 The computers running the different software can identify each other using the IP protocol. We are using IPv4. When several parts of the software is running on the same computer, we assign a port number for each service.
 
+
+#### System architecture
+
+***`System architecture`***
+
+![1670270477845](image/ProjectReport/1670270477845.png)
+
+The software which HealthMonitor consists of can be divided into these components:
+
+- Sensor:Attached to a patient and performs measurements.
+- Bridge/Analyzer: Located at the patients home. Receives and formats measurements.
+- Server: Receives the measurements from the Bridge. Processes it and uploads to database.
+- Database: Contains patient information, measurements, and user-information.
+- Website: Visualization node, fetching data from the database.
+
+A patient will have a sensor attached to itself, most likely a wristband. This wristband will
+measure blood pressure and heartrate every X seconds. This date of the
+measurement, the measurement, and the serial-number of the sensor will be concatenated
+into a string, which will be sent using TCP to the Bridge.
+
+The Bridge will receive the data as they arrive. It runs one thread for listening, and other
+threads for processing each packet received. The processing consists of transmitting
+the string to the java-server using the same format, and through TCP.
+
+
+***`Sensor to Bridge to Server`***
+
+![1670270649812](image/ProjectReport/1670270649812.png)
+
+When the server receives the data, it will create a thread which are to handle this measurement. The received string will be sent to the Coordinator-class. Here, the Coordinator will identify the patient by using the getPid() method of the DatabaseClient-class using the serial number of the sensor as parameter. Further on, the Coordinator will require the N last measurements for this patient. If the patients last measurements differs by the expected values, the patients health status will be set to. “UNUSUAL”. If the average of the last N measurements differs by the expected values, the status will be set to “CRITICAL”. The connection to the server which is hosting the database goes through the Application Layer protocol MySQL which carry queries and results. This protocol is wrapped in TCP.
+
+
+***`Server to Database`***
+
+![1670270727418](image/ProjectReport/1670270727418.png)
+
+When logging into the website. A doctor can either search for a specific patient by either name or id, or the doctor can see all patients whose status is not “STABLE”. The patient can see the journal of each patient. The journal contains all information regarding the patient including diagnoses. A graph will also be displayed to show the development of measurement-values for blood pressure and heartrate.
+
+The content-containers are located in the HTML and decorated with CSS. The JavaScript files will add functionality to the webpage as well as plotting the graphs using Chart.js. They will also send HTML requests using the GET method to the PHP server-files. The server-files contain queries which will be completed by parameters specified in the GET request. This query is then sent to the database-server using the MySQL protocol and TCP. The result will be JSON encoded and returned as an HTTP response to the JavaScript-file which sent the request. Then the content will be displayed in the HTML-files using DOM. This makes the result visible for the user.
+
+
+***`Webpage to Database`***
+
+![1670270794521](image/ProjectReport/1670270794521.png)
+
+
+
 ## Results
 
 ---
