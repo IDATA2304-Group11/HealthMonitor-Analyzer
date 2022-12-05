@@ -15,21 +15,17 @@ We want to make an application which makes it easier for all patients to monitor
 ## Theory and technology
 ***
 
-Given that blood pressure oscillate it makes the modelling of the data more complex than it would be modelling stable data. In order to achieve realistic datasets we have incorporated the use of trigonometric functions as they have the ability to describe entities that fluctuate. 
-
-#### <b>Results</b>
-In this case, a sine wave which grows psudo-randomly but are constructed in a way that it will only diverge from the average value when in range of realistic values for blood pressure. This way the data fluctuates as a blood pressure normally would and allows for a realistic model.
-
-For improvements the generation methods could be optimized and refactored to a single module with the goal of generating, and a complementing module who focuses on generating patients. As it is now both generation of patients and data is done in the same module. But ultimatley the biggest improvment when it comes to the dataset of the application would be implementing actual sensors with actual real data from patients.
-
-### <b>Web development</b>
-***
-#### <b>Theory</b>
 As of web development, we use HTML5 and CSS for webdesign and decoration. HTML is a hypertext markup language for the web that defines the structure of web pages by creating html elements. Web pages are mostly structured by divisions, also called divs. These are containers that contain other html elements such as paragraphs, tables, text and buttons. In our webdesign, we have actively been using divisons to distribute responsibility of elements to make both html and css code more structured. 
-As of web development, we use HTML5 and CSS for webdesign and decoration. HTML is a hypertext markup language for the web that defines the structure of web pages by creating HTML elements. Web pages are mostly structured by divisions, also called divs. These are containers that contain other HTML elements such as paragraphs, tables, text and buttons. In our webdesign, we have actively been using divisons to distribute responsibility.
 
 CSS, cascading style sheets, is a programming language used to describe html elements with properties such as coloring,
-#### <b>Results</b>
+
+In terms of the data generation we chose to rely on syntetic data to simulate the health of the patients. As the measurement of blood pressure is highly complex and requires both technological and medical expertise to gather and interpret the data. With the timeframe of this project this would not be attainable. However, the data is based of actual medical records to ensure that the application is tested in a realistic enviroment[2]. Given that blood pressure oscillate it makes the modelling of the data more complex than it would be modelling stable data. In order to achieve realistic datasets we have incorporated the use of trigonometric functions as they have the ability to describe entities that fluctuate. 
+
+## Results
+***
+
+#### Web
+
 At first we were unsure on whether to use text-based terminal gui, or create a webpage for visualization. However, we landed on creating a webpage due to its simplicity and ease of use. Some of the functionality we discussed before creating the website was:
 * Patients visualization through table
 * Patient search
@@ -39,19 +35,27 @@ and structuring by using HTML elements. HTML elements are the building blocks of
 
 Some of our goals when designing the website are good interaction between user and machine, such 
 
-In terms of the data generation we chose to rely on syntetic data to simulate the health of the patients. As the measurement of blood pressure is highly complex and requires both technological and medical expertise to gather and interpret the data. With the timeframe of this project this would not be attainable. However, the data is based of actual medical records to ensure that the application is tested in a realistic enviroment[2]. Given that blood pressure oscillate it makes the modelling of the data more complex than it would be modelling stable data. In order to achieve realistic datasets we have incorporated the use of trigonometric functions as they have the ability to describe entities that fluctuate. 
+Currently we have limited the scope of the webpage to only show critial patients at the dashboard, as well as all patients under the patients tab in the sidebar. By using sidebars, we can easily expand the scope and implement new functionality by writing more HTML and CSS code.
 
-## Results
-***
+
+#### Database
+
+For the database we have chosen a relational data model to store our patients and users data. As there are only 2 relationships and 2 entity sets to model we chose the relational model for familiarity. The model is structured in a way that patients can have multiple diagnoses and multiple data entries. To ensure the integrity of the database there is applied a primary key to all relations and entity sets, this ensures that a patient can only have a realtion to a diagnosis once and only one data entry at a given time.
+
+![database_ER|600](/img/database_ER.png)
+
+
+#### Data generation
 
 In this case, a sine wave which grows psudo-randomly but are constructed in a way that it will only diverge from the average value when in range of realistic values for blood pressure. This way the data fluctuates as a blood pressure normally would and allows for a realistic model.
 
-Currently we have limited the scope of the webpage to only show critial patients at the dashboard, as well as all patients under the patients tab in the sidebar. By using sidebars, we can easily expand the scope and implement new functionality by writing more HTML and CSS code.
 For improvements the generation methods could be optimized and refactored to a single module with the goal of generating, and a complementing module who focuses on generating patients. As it is now both generation of patients and data is done in the same module. But ultimatley the biggest improvment when it comes to the dataset of the application would be implementing actual sensors with actual real data from patients.
 
 #### <b>Wireframes</b>
 <!-- Extension -->
-![Dashboard_wireframe](/img/WIREFRAME1.png =400x400) ![Dashboard_wireframe](/img/WIREFRAME2.png =400x400)
+![Statistics|600](/img/WIREFRAME1.png)
+
+![Patient_list|600](/img/WIREFRAME2.png)
 
 
 ## <b>References</b>
