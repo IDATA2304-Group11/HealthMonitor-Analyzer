@@ -2,7 +2,7 @@
 
 ## Abstract
 
-Statistics shows that over 26% of adults between 50 and 80 don't measure their blood pressure as often as they should. Hypertension, also known as blood pressure, increases the risk of heart disease and stroke, two leading causes of death in USA and Europe. As a result, we have developed a IoT device to make blood pressure tracking easier for exposed adults and elders. Healthmontor tracks blood pressure through a device such as a smart watch, and sends it to the patients doctor for reviewal.This may help people slacking on their tracking, and provide better quality of life.
+Statistics shows that over 26% of adults between 50 and 80 don't measure their blood pressure as often as they should. Hypertension, also known as blood pressure, increases the risk of heart disease and stroke, two leading causes of death in USA and Europe. As a result, we have developed a IoT device to make blood pressure tracking easier for exposed adults and elders. Healthmontor tracks blood pressure through a device such as a smart watch, and sends it to the patients doctor for reviewal.This may help people slacking on their tracking, and provide better quality of life. 
 
 ## Introduction
 
@@ -10,7 +10,7 @@ In one of our courses here at NTNU Ålesund, we have been assigned a group proje
 
 Statistics from 2021 shows that more than half of adults between 50 and 80 have health conditions that put them on high risk if they don't keep their blood pressure under control. In all, 26% of all these adults in the range of 50 to 80 years of age, said they dont monitor their blood pressure as often as they should[1].
 
-We want to make an application which makes it easier for all patients to monitor their blood pressure. By using devices such as smart watches, we could sense minutely, or hourly, the patients's blood pressure in constant time, and send the information to the doctor for monitoring. Our application will also have the social benefit to warn doctors about patients whose blood pressure is too high, or too low, depening on the situation the patient is located in.
+We want to make an application which makes it easier for all patients to monitor their blood pressure. By using devices such as smart watches, we could sense minutely, or hourly, the patients's blood pressure in constant time, and send the information to the doctor for monitoring. Our application will also have the social benefit to warn doctors about patients whose blood pressure is too high, or too low, depening on the situation the patient is located in. This can therefore also be used as an alternative for a elderly home or other sorts of medical institutions for elderly persons and persons with cardiovascular diseases, when a patient can be considered stable enough for this sort of solution rather than being moved to a institution for monitoring. 
 
 ## Theory and technology
 
@@ -45,6 +45,12 @@ The computers running the different software can identify each other using the I
 
 For the server to recognize what is considered as acceptable health values for patients of different ages and genders, the server includes a JSON file which contains these values. When receiving a new measurement, the server will identify both age and gender of the patient through database queries, then it will use a JSON handler to access the internal JSON file and retrieve the relevant values. JSON is a text-based standard for formatting documents. It is commonly used for storing data such as we have done, as well as for having a standardized structure for transmitting data between e.g. a database and webpage. The PHP server-files in our web application uses this to ensure that there is a common agreement between JavaScript files and PHP files regarding the format of exhanged data.
 
+#### Methodology
+The group has arranged meetings on a regular basis throughout the lifespan of this project. These meetings has mainly taken place at the school, but when this was not possible, we have done virtual meetings instead. A typical meeting usually lasted an hour or two based on the agenda. At the start of this project, the meetings where often shorter, and we had typically one meeting per week. As we advanced in our development, the meeting frequency rose to two meetings per week, where they often where longer as well.
+
+The meeting agendas usually consisted of each member informing the others how their work has been, whether they have experienced issues or have other ideas. Later, we usually got ourselves an overview over what work which were to be done next, setting deadlines, passing new ideas and planning. Sometimes, we also has been sitting together while working on our jurisdiction of the code individually. Mostly however, the group has worked separatly and in a self-paced tempo, where each member has a deadline for the completion of their specific task. 
+
+We have mainly used Discord for communication, but we have actively used the issue board in GitHub for listing the work which each group member were expected to complete in a certain time frame. The work which has been done has not only been code-oriented. During the middle-part of our project, much of the work which needed to be done where things such as database-design and researching.
 
 ## Results
 
