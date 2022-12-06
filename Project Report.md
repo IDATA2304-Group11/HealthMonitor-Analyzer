@@ -1,14 +1,10 @@
 ## Abstract
 
----
-
 Statistics shows that over 26% of adults between 50 and 80 don't measure their blood pressure as often as they should. Hypertension, also known as blood pressure, increases the risk of heart disease and stroke, two leading causes of death in USA and Europe. As a result, we have developed a IoT device to make blood pressure tracking easier for exposed adults and elders. Healthmontor tracks blood pressure through a device such as a smart watch, and sends it to the patients doctor for reviewal. `<b>`This may help people slacking on their tracking`</b>`, and provide better quality of life.
 
 This report is written by four students at NTNU Ålesund; Mikkel Stavelie, Petter Edvardsen, Jørgen Finsveen and Ole-Kristian Dvergsdal.
 
 ## Introduction
-
----
 
 In one of our courses here at NTNU Ålesund, we have been assigned a group project to create an application for the Internet of Things (IoT). The intention of the project is to apply the knowledge on networking in a broader context, by actively using our former knowledge on system development to create an application with social meaningful benefits. Considering this, the group has decided to create an application for doctors to monitor its patients. The application will mainly target adults and elders, but also people suffering from other diagnoses to help in case of emergencies.
 
@@ -17,8 +13,6 @@ Statistics from 2021 shows that more than half of adults between 50 and 80 have 
 We want to make an application which makes it easier for all patients to monitor their blood pressure. By using devices such as smart watches, we could sense minutely, or hourly, the patients's blood pressure in constant time, and send the information to the doctor for monitoring. Our application will also have the social benefit to warn doctors about patients whose blood pressure is too high, or too low, depening on the situation the patient is located in.
 
 ## Theory and technology
-
----
 
 As of web development, we use HTML5 and CSS for webdesign and decoration. HTML is a hypertext markup language for the web that defines the structure of web pages by creating html elements. Web pages are mostly structured by divisions, also called divs. These are containers that contain other html elements such as paragraphs, tables, text and buttons. In our webdesign, we have actively been using divisons to distribute responsibility of elements to make both html and css code more structured.
 
@@ -98,8 +92,6 @@ The content-containers are located in the HTML and decorated with CSS. The JavaS
 
 
 ## Results
-
----
 
 #### Security
 
