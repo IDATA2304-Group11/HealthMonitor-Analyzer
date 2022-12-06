@@ -3,12 +3,12 @@
 import Server as Server
 
 # Address of this application.
-THIS_HOST = '192.168.86.37'
+THIS_HOST = '10.24.88.135'
 THIS_PORT = 9852
 
 
 # Address of the main server.
-SERVER_HOST = '192.168.86.37'
+SERVER_HOST = '10.24.88.135'
 SERVER_PORT = 9235
 
 
