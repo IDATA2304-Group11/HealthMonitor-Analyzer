@@ -1,8 +1,6 @@
 ## Abstract
 
-Statistics shows that over 26% of adults between 50 and 80 don't measure their blood pressure as often as they should. Hypertension, also known as blood pressure, increases the risk of heart disease and stroke, two leading causes of death in USA and Europe. As a result, we have developed a IoT device to make blood pressure tracking easier for exposed adults and elders. Healthmontor tracks blood pressure through a device such as a smart watch, and sends it to the patients doctor for reviewal. `<b>`This may help people slacking on their tracking`</b>`, and provide better quality of life.
-
-This report is written by four students at NTNU Ålesund; Mikkel Stavelie, Petter Edvardsen, Jørgen Finsveen and Ole-Kristian Dvergsdal.
+Statistics shows that over 26% of adults between 50 and 80 don't measure their blood pressure as often as they should. Hypertension, also known as blood pressure, increases the risk of heart disease and stroke, two leading causes of death in USA and Europe. As a result, we have developed a IoT device to make blood pressure tracking easier for exposed adults and elders. Healthmontor tracks blood pressure through a device such as a smart watch, and sends it to the patients doctor for reviewal.This may help people slacking on their tracking, and provide better quality of life.
 
 ## Introduction
 
@@ -211,7 +209,7 @@ Currently we have limited the scope of the webpage to only show critial patients
 
 #### Database
 
-For the database we have chosen a relational data model to store our patients and users data. As there are only 2 relationships and 2 entity sets to model we chose the relational model for familiarity. The model is structured in a way that patients can have multiple diagnoses and multiple data entries. To ensure the integrity of the database there is applied a primary key to all relations and entity sets, this ensures that a patient can only have a realtion to a diagnosis once and only one data entry at a given time.
+For the database we have chosen a relational data model to store our patients and users data. As there are only 2 relationships and 2 entity sets to model we chose the relational model for familiarity. The model is structured in a way that patients can have multiple diagnoses and multiple data entries. To ensure the integrity of the database there is applied a primary key to all relations and entity sets, this ensures that a patient can only have a realtion to a diagnosis once and no duplicate data entries for that patient at one time. This makes sure that there are no redundancies in the database and protects the data from anomalies.
 
 ![database_ER|600](/img/database_ER.png)
 
@@ -299,8 +297,7 @@ An admin-user should also be able to register new users.
 
 ##### Generator
 
-The generator is exceptional as it encorporates periodic funcitons learned in math in order to simulate data which resembeles blood pressure. The simple way of generating the data would be to have a random values inbetween a realistic range. As the varaibles diastolic and systolic blood pressure are dependent variables therefore fluctuation in one variable affects the other. This is more flexible when using periodic functions rather than using iteration as math can easier be used for changes. 
-
+The generator is exceptional as it encorporates periodic funcitons learned in math in order to simulate data which resembeles blood pressure. The simple way of generating the data would be to have a random values inbetween a realistic range. As the varaibles diastolic and systolic blood pressure are dependent variables fluctuation in one variable could affect the other.This is more easier when using periodic functions as math can be used for changes. 
 
 ##### Architecture 
 
@@ -308,13 +305,13 @@ The generator is exceptional as it encorporates periodic funcitons learned in ma
 ##### Multithreading
 
 
-####  Dyanamic webpage
+#### Dyanamic webpage
 
 
-####  Security 
+#### Security 
 
 
-## `<b>`References`</b>`
+## References
 
 [1] https://labblog.uofmhealth.org/rounds/many-at-risk-older-adults-arent-checking-blood-pressure-at-home-or-being-encouraged-to-do-so?fbclid=IwAR1x0WsrFR9vXrwJmKyf8ys5_aMfzVVqm3BcdKE6KTIKHlJt2L3r7m-GgYk
 
