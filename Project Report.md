@@ -256,6 +256,7 @@ Upon ending the testing event, we went back to the website and applied all the c
 mentioned above. After, we let participants test again to make sure they were
 content with the changes which we had done.
 
+## Discussion
 
 #### Future development
 
@@ -292,6 +293,25 @@ with its patients when necessary. The last feature could be e.g., that the user
 could send an alert through the website, so that the patient would get an SMS. Another
 idea would be to allow a user to get alerts when a patient’s status is updated.
 An admin-user should also be able to register new users.
+
+
+#### Exceptional features
+
+##### Generator
+
+The generator is exceptional as it encorporates periodic funcitons learned in math in order to simulate data which resembeles blood pressure. The simple way of generating the data would be to have a random values inbetween a realistic range. As the varaibles diastolic and systolic blood pressure are dependent variables therefore fluctuation in one variable affects the other. This is more flexible when using periodic functions rather than using iteration as math can easier be used for changes. 
+
+
+##### Architecture 
+
+
+##### Multithreading
+
+
+####  Dyanamic webpage
+
+
+####  Security 
 
 
 ## `<b>`References`</b>`
